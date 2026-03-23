@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+@function pxToRem($px) {
+  @return '#{math.div($px, 16)}rem';
+}
+:root {
+  --medium-font-weight: 650;
+
+  --size-page-title: #{pxToRem(40)};
+  --size-head-1: #{pxToRem(36)};
+  --size-head-2: #{pxToRem(29)};
+  --size-head-3: #{pxToRem(24)};
+  --size-head-4: #{pxToRem(24)};
+  --size-subhead-1: #{pxToRem(19)};
+  --size-subhead-2: #{pxToRem(15)};
+  --size-regular: #{pxToRem(15)};
+  --size-small: #{pxToRem(13)};
+  --size-tiny: #{pxToRem(10)};
+  --size-table: #{pxToRem(13)};
+  --size-tile: #{pxToRem(18)};
+}

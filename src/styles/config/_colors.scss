@@ -1,0 +1,195 @@
+:root[data-theme='oticon'] {
+  --color-secondary-deep-1: rgb(var(--color-secondary-deep-1-raw));
+  --color-secondary-deep-2: rgb(var(--color-secondary-deep-2-raw));
+
+  --color-link: var(--color-primary-weblink);
+  --color-link-hover: var(--color-primary);
+
+  //navigation
+  --color-text: var(--color-grey-0100);
+  --color-navigation-background: var(--color-grey-0925);
+  --color-navigation-font: var(--color-black);
+
+  --site-background: var(--color-grey-1000);
+  --site-background-dark: var(--color-grey-0800);
+
+  //button dark
+  --color-button-dark-text-hover: var(--color-secondary-deep-1);
+  --color-button-dark-background: var(--color-secondary-deep-1);
+
+  --color-bg-sitecore-dark-1-raw: var(--color-secondary-deep-1-raw);
+  --color-bg-sitecore-dark-2-raw: var(--color-secondary-deep-2-raw);
+  --color-bg-sitecore-light-1-raw: var(--color-secondary-highlight-2-raw);
+  --color-bg-sitecore-light-2-raw: var(--color-grey-0350-raw);
+
+  --color-minicart: rgb(var(--color-primary-weblink-raw));
+  --color-minicart-hover: rgb(var(--color-primary-raw));
+  --color-minicart-text: var(--color-minicart);
+  --color-minicart-text-hover: var(--color-minicart-hover);
+  --color-minicart-text-disabled: rgb(var(--color-text-header-raw));
+  --color-minicart-text-disabled-hover: var(--color-minicart-text-disabled);
+  --color-minicart-bag: var(--color-white);
+  --color-minicart-bag-disabled: rgb(var(--color-grey-0150-raw));
+
+  --color-device-table-warning: rgb(var(--color-primary-weblink-raw));
+  --color-device-table-warning-hover: rgb(var(--color-primary-raw));
+}
+
+:root {
+  --color-grey-0100: rgb(var(--color-grey-0100-raw));
+  --color-grey-0150: rgb(var(--color-grey-0150-raw));
+  --color-grey-0200: rgb(var(--color-grey-0200-raw));
+  --color-grey-0250: rgb(var(--color-grey-0250-raw));
+  --color-grey-0300: rgb(var(--color-grey-0300-raw));
+  --color-grey-0350: rgb(var(--color-grey-0350-raw));
+  --color-grey-0400: rgb(var(--color-grey-0400-raw));
+  --color-grey-0450: rgb(var(--color-grey-0450-raw));
+  --color-grey-0500: rgb(var(--color-grey-0500-raw));
+  --color-grey-0600: rgb(var(--color-grey-0600-raw));
+  --color-grey-0700: rgb(var(--color-grey-0700-raw));
+  --color-grey-0750: rgb(var(--color-grey-0750-raw));
+  --color-grey-0800: rgb(var(--color-grey-0800-raw));
+  --color-grey-0850: rgb(var(--color-grey-0850-raw));
+  --color-grey-0900: rgb(var(--color-grey-0900-raw));
+  --color-grey-0925: rgb(var(--color-grey-0925-raw));
+  --color-grey-0950: rgb(var(--color-grey-0950-raw));
+  --color-grey-1000: rgb(var(--color-grey-1000-raw));
+
+  // Right hearing aid colors
+  --color-right-0100: rgb(var(--color-right-0100-raw));
+  --color-right-0200: rgb(var(--color-right-0200-raw));
+  --color-right-0300: rgb(var(--color-right-0300-raw));
+  --color-right-0400: rgb(var(--color-right-0400-raw));
+  --color-right-0500: rgb(var(--color-right-0500-raw));
+  --color-right-0600: rgb(var(--color-right-0600-raw));
+  --color-right-0700: rgb(var(--color-right-0700-raw));
+  --color-right-0800: rgb(var(--color-right-0800-raw));
+  --color-right-0900: rgb(var(--color-right-0900-raw));
+
+  // Left hearing aid colors
+  --color-left-0100: rgb(var(--color-left-0100-raw));
+  --color-left-0200: rgb(var(--color-left-0200-raw));
+  --color-left-0300: rgb(var(--color-left-0300-raw));
+  --color-left-0400: rgb(var(--color-left-0400-raw));
+  --color-left-0500: rgb(var(--color-left-0500-raw));
+  --color-left-0600: rgb(var(--color-left-0600-raw));
+  --color-left-0700: rgb(var(--color-left-0700-raw));
+  --color-left-0800: rgb(var(--color-left-0800-raw));
+  --color-left-0900: rgb(var(--color-left-0900-raw));
+
+  --color-white: rgb(var(--color-white-raw));
+  --color-black: rgb(var(--color-black-raw));
+
+  --color-corporate-raw: var(--color-primary-weblink-raw);
+  --color-corporate: var(--color-primary-weblink);
+
+  //cta
+  --color-primary: rgb(var(--color-primary-raw));
+  --color-primary-weblink: rgb(var(--color-primary-weblink-raw));
+  --color-secondary-highlight-1: rgb(var(--color-secondary-highlight-1-raw));
+  --color-secondary-highlight-2: rgb(var(--color-secondary-highlight-2-raw));
+
+  // surface
+  --color-success: rgb(var(--color-success-raw));
+  --color-success-light: rgb(var(--color-success-light-raw));
+  --color-info: rgb(var(--color-info-raw));
+  --color-info-light: rgb(var(--color-info-light-raw));
+  --color-warning: rgb(var(--color-warning-raw));
+  --color-warning-light: rgb(var(--color-warning-light-raw));
+  --color-notification: rgb(var(--color-notification-raw));
+  --color-error: rgb(var(--color-error-raw));
+  --color-error-light: rgb(var(--color-error-light-raw));
+  --color-surface-brand-medium: rgb(var(--color-surface-brand-medium-raw));
+  --color-surface-brand-tertiary: rgb(var(--color-surface-brand-tertiary-raw));
+
+  --color-border: #cccccc;
+  --color-table-background: var(--color-grey-0925);
+
+  //button
+  --padding-button: 11px 16px;
+  --padding-button-large: 8px 16px 8px 16px;
+  --font-size-button: 13px;
+  --font-size-button-options: 1rem;
+  --font-size-button-large: 13px;
+  --line-height-button: 15.6px;
+  --line-height-button-large: 15.6px;
+  --radius-button: 20px;
+  --color-button-background: var(--color-primary-weblink);
+  --color-button-background-hover: var(--color-white);
+  --color-button-text: var(--color-white);
+  --color-button-text-hover: var(--color-primary-weblink);
+
+  //button secondary
+  --color-button-secondary-background: transparent;
+  --color-button-secondary-background-hover: transparent;
+  --color-button-secondary-background-active: var(--color-grey-0300);
+  --color-button-secondary-text: var(--color-grey-0150);
+  --color-button-secondary-border: var(--color-grey-0400);
+  --color-button-secondary-text-hover: var(--color-surface-brand-medium);
+  --color-button-secondary-text-active: var(--color-white);
+
+  //button light
+  --color-button-light-background: var(--color-white);
+  --color-button-light-background-hover: var(--color-primary-weblink);
+  --color-button-light-background-active: var(--color-grey-0300);
+  --color-button-light-text: var(--color-primary-weblink);
+  --color-button-light-border: var(--color-white);
+  --color-button-light-text-hover: var(--color-white);
+  --color-button-light-text-active: var(--color-white);
+
+  //button dark
+  --color-button-dark-background-hover: var(--color-grey-1000);
+  --color-button-dark-text: var(--color-grey-1000);
+
+  // button arrow inverse
+  --color-button-arrow-inverse-background: var(--color-grey-0925);
+  --color-button-arrow-inverse-text: var(--color-grey-0150);
+  --color-button-arrow-inverse-background-hover: var(--color-grey-1000);
+  --color-button-arrow-inverse-text-hover: var(--color-grey-0150);
+
+  // button group
+  --radius-button-group: 6px;
+  --color-button-group-background: var(--color-white);
+  --color-button-group-filled-background: var(--color-grey-1000);
+  --color-button-group-background-hover: var(--color-primary-weblink);
+  --color-button-group-text: var(--color-grey-0150);
+  --color-button-group-secondary-border: var(--color-grey-0400);
+  --color-button-group-text-hover: var(--color-white);
+
+  //text input
+  --input-border: 1px solid var(--color-white);
+  --input-border-hover: 2px solid var(--color-black);
+  --input-padding-text: 0.5rem 1rem;
+
+  //navigation
+  --navigation-minimised-width: 70px;
+  --navigation-width: 263px;
+  --navigation-submenu-background-color: var(--color-grey-0800);
+  --navigation-link-min-height: 47px;
+  --navigation-active-color: var(--color-corporate);
+  --navigation-hover-background-color: var(--color-grey-0800);
+  --navigation-type-separator-color: var(--color-grey-0700);
+
+  //miscellaneous
+  --font-size: 16px;
+  --disabled-opacity: 0.4;
+  --logo-container-height: 97px;
+  --image-gradient-from: rgba(204, 206, 207, 0); // #cccecf00;
+  --image-gradient-to: rgba(220, 222, 224, 0.25); // #dcdee03F;
+  --image-gradient-to-dark: rgba(220, 222, 224, 0.5); // #dcdee07f;
+
+  --scrollbar-color: var(--color-grey-0700);
+
+  @media (min-width: 768px) {
+    --logo-container-height: 122px;
+  }
+
+  --logo-container-width: calc(var(--navigation-width) - var(--navigation-minimised-width));
+
+  //special messages
+  --special-message-level-high: red;
+  --special-message-level-medium: orange;
+  --special-message-level-low: gray;
+
+  font-size: var(--font-size);
+}

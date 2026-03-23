@@ -1,0 +1,11 @@
+@import 'config/colorsRaw';
+@import 'config/colors';
+@import 'config/fontSizes';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+  max-height: 100%;
+}

@@ -1,0 +1,78 @@
+@function hexToRGBString($hexColor) {
+  @return '#{red($hexColor)} #{green($hexColor)} #{blue($hexColor)}';
+}
+
+:root {
+  // Raw rgb color values for tailwind (necessary for tailwind opacity system)
+  --color-primary-raw: #{hexToRGBString(#c6168d)};
+  --color-primary-weblink-raw: #{hexToRGBString(#963270)};
+  --color-secondary-deep-1-raw: #{hexToRGBString(#410032)};
+  --color-secondary-deep-2-raw: #{hexToRGBString(#0d3547)};
+  --color-secondary-highlight-1-raw: #{hexToRGBString(#7b1e57)};
+  --color-secondary-highlight-2-raw: #{hexToRGBString(#927748)};
+  --color-grey-0100-raw: #{hexToRGBString(#19191a)};
+  --color-grey-0150-raw: #{hexToRGBString(#2f3132)};
+  --color-grey-0200-raw: #{hexToRGBString(#3b3c3d)};
+  --color-grey-0250-raw: #{hexToRGBString(#5b5a59)};
+  --color-grey-0300-raw: #{hexToRGBString(#6b6867)};
+  --color-grey-0350-raw: #{hexToRGBString(#74716f)};
+  --color-grey-0400-raw: #{hexToRGBString(#7e7b78)};
+  --color-grey-0450-raw: #{hexToRGBString(#898682)};
+  --color-grey-0500-raw: #{hexToRGBString(#b7b3ac)};
+  --color-grey-0600-raw: #{hexToRGBString(#cbc9c4)};
+  --color-grey-0700-raw: #{hexToRGBString(#d7d3cc)};
+  --color-grey-0750-raw: #{hexToRGBString(#dedad3)};
+  --color-grey-0800-raw: #{hexToRGBString(#e3dfdb)};
+  --color-grey-0850-raw: #{hexToRGBString(#e7e2de)};
+  --color-grey-0900-raw: #{hexToRGBString(#e8e5e1)};
+  --color-grey-0925-raw: #{hexToRGBString(#ebe8e5)};
+  --color-grey-0950-raw: #{hexToRGBString(#efedea)};
+  --color-grey-1000-raw: #{hexToRGBString(#f7f6f4)};
+
+  // Right hearing aid colors
+  --color-right-0100-raw: #{hexToRGBString(#3b0202)};
+  --color-right-0200-raw: #{hexToRGBString(#580404)};
+  --color-right-0300-raw: #{hexToRGBString(#760505)};
+  --color-right-0400-raw: #{hexToRGBString(#930606)};
+  --color-right-0500-raw: #{hexToRGBString(#a93838)};
+  --color-right-0600-raw: #{hexToRGBString(#be6a6a)};
+  --color-right-0700-raw: #{hexToRGBString(#d49b9b)};
+  --color-right-0800-raw: #{hexToRGBString(#e9cdcd)};
+  --color-right-0900-raw: #{hexToRGBString(#f4e8e8)};
+
+  // Left hearing aid colors
+  --color-left-0100-raw: #{hexToRGBString(#051e37)};
+  --color-left-0200-raw: #{hexToRGBString(#0a2b4c)};
+  --color-left-0300-raw: #{hexToRGBString(#0e3b6a)};
+  --color-left-0400-raw: #{hexToRGBString(#124d88)};
+  --color-left-0500-raw: #{hexToRGBString(#2c66a1)};
+  --color-left-0600-raw: #{hexToRGBString(#5b88b6)};
+  --color-left-0700-raw: #{hexToRGBString(#8aaacb)};
+  --color-left-0800-raw: #{hexToRGBString(#b9cce0)};
+  --color-left-0900-raw: #{hexToRGBString(#e8eef5)};
+
+  // system colors
+  --color-white-raw: #{hexToRGBString(#fff)};
+  --color-black-raw: #{hexToRGBString(#000)};
+  --color-success-raw: #{hexToRGBString(#1bb26e)};
+  --color-success-light-raw: #{hexToRGBString(#c2e8d7)};
+  --color-info-raw: #{hexToRGBString(#34495e)};
+  --color-info-dark-raw: #{hexToRGBString(#2f3132)};
+  --color-info-light-raw: #{hexToRGBString(#ccd1d7)};
+  --color-warning-raw: #{hexToRGBString(#ef9000)};
+  --color-warning-light-raw: #{hexToRGBString(#f7dfbb)};
+  --color-notification-raw: var(--color-secondary-highlight-2-raw);
+  --color-error-raw: #{hexToRGBString(#d0021b)};
+  --color-error-light-raw: #{hexToRGBString(#efbcc2)};
+
+  --color-text-header-raw: var(--color-secondary-deep-1-raw);
+  --color-text-link-dark-raw: var(--color-secondary-deep-1-raw);
+  --color-surface-brand-raw: var(--color-primary-weblink-raw);
+  --color-surface-brand-medium-raw: var(--color-secondary-highlight-1-raw);
+  --color-surface-brand-dark-raw: var(--color-secondary-deep-1-raw);
+  --color-surface-brand-secondary-dark-raw: var(--color-secondary-deep-2-raw);
+  --color-surface-brand-tertiary-raw: var(--color-secondary-highlight-2-raw);
+  --color-surface-card-primary-raw: var(--color-secondary-highlight-1-raw);
+
+  --color-primary-weblink-hover-raw: var(--color-secondary-highlight-1-raw);
+}

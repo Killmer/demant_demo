@@ -1,0 +1,57 @@
+{
+  "name": "demant-myb-test-task",
+  "description": "Application utilizing Next.js",
+  "version": "20.0.3",
+  "private": true,
+  "packageManager": "npm@9.5.1",
+  "engines": {
+    "node": ">=18.16.x"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "start": "next start",
+    "ts": "tsc --noEmit --incremental --preserveWatchOutput --pretty --watch",
+    "_dev": "cross-env IS_LOCAL='1' concurrently --kill-others -n NEXT,TS -c magenta,red \"npm run dev\" \"npm run ts\""
+  },
+  "dependencies": {
+    "@svgr/webpack": "^8.0.1",
+    "any-date-parser": "^1.5.4",
+    "clsx": "^2.1.0",
+    "date-fns": "^2.30.0",
+    "loglevel": "^1.8.1",
+    "moment": "^2.29.4",
+    "next": "^14.2.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-portal": "^4.2.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.7",
+    "@types/node": "^20.4.0",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@types/react-portal": "^4.0.4",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "concurrently": "^7.6.0",
+    "constant-case": "^3.0.4",
+    "cross-env": "~7.0.3",
+    "glob-promise": "^6.0.7",
+    "npm-run-all": "~4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-import": "^15.1.0",
+    "sass": "^1.63.6",
+    "tailwindcss": "^3.3.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.9.4",
+    "typescript-plugin-css-modules": "^5.1.0"
+  },
+  "overrides": {
+    "webpack": "^5",
+    "stylus": "https://github.com/stylus/stylus/archive/refs/tags/0.64.0.tar.gz"
+  }
+}
