@@ -21,7 +21,7 @@ const NewsletterSignupModal: FC<Props> = ({
   onClose,
 }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick>
       <div
         className={`flex min-h-[460px] max-w-[850px]  ${POPUP_ACCENT_DECORATION_STYLES}`}
       >
