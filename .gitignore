@@ -1,14 +1,34 @@
+# Next.js
+.next/
+out/
+
+# Build / TypeScript incremental
 /tmp
 /out-tsc
+*.tsbuildinfo
 
+# Dependencies
 /node_modules
+
+# Environment (local overrides — never commit secrets)
+.env.local
+.env.*.local
+
+# Test output
+coverage/
+cypress/screenshots/
+cypress/videos/
+
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /.pnp
 .pnp.js
 
+# IDE
 .vscode/*
 .idea
-.next
+
+# OS
 .DS_Store

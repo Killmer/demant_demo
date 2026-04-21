@@ -1,27 +1,25 @@
 const nextConfig = {
-  // Allow specifying a distinct distDir when concurrently running app in a container
-  distDir: '.next',
-  productionBrowserSourceMaps: true,
-  i18n: {
-    // These are all the locales you want to support in your application.
-    // These should generally match (or at least be a subset of) those in Sitecore.
-    locales: ['en'],
-    // This is the locale that will be used when visiting a non-locale
-    // prefixed path e.g. `/styleguide`.
-    defaultLocale: 'en'
-  },
+  distDir: process.env.NEXT_DIST_DIR || ".next",
+  productionBrowserSourceMaps: process.env.ENABLE_SOURCE_MAPS === "true",
 
-  // Enable React Strict Mode
   reactStrictMode: true,
 
   webpack(config) {
+    // Disable Next.js's default SVG asset rule so @svgr/webpack can take over
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.(".svg"),
+    );
+    if (fileLoaderRule) {
+      fileLoaderRule.exclude = /\.svg$/i;
+    }
+
     config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
+      test: /\.svg$/i,
+      use: ["@svgr/webpack"],
     });
 
     return config;
-  }
+  },
 };
 
 module.exports = nextConfig;
