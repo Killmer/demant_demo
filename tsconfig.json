@@ -52,6 +52,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "incremental": true,
+    "types": ["jest", "node", "react", "react-dom"],
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"

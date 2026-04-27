@@ -1,6 +1,7 @@
 import 'styles/globals.scss';
 import { ReactElement } from 'react';
 import { openSans } from 'styles/fonts/fonts';
+import { ModalProvider } from 'context/ModalContext';
 
 const App = ({ Component, pageProps }: any): ReactElement => {
 
@@ -11,7 +12,9 @@ const App = ({ Component, pageProps }: any): ReactElement => {
               --font-open-sans: ${openSans.style.fontFamily};
           }
       `}</style>
-      <Component {...pageProps} />
+      <ModalProvider>
+        <Component {...pageProps} />
+      </ModalProvider>
     </>
   );
 };
