@@ -1,4 +1,5 @@
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { expect } from "@jest/globals";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import NewsletterSignupForm from "../NewsletterSignupForm";
 
@@ -18,14 +19,14 @@ describe("NewsletterSignupForm", () => {
     it("renders the first clinic address line with its label", () => {
       setup();
       expect(
-        screen.getByLabelText("Clinic - Address line 1")
+        screen.getByLabelText("Clinic - Address line 1"),
       ).toBeInTheDocument();
     });
 
     it("renders the 'Add another line' button", () => {
       setup();
       expect(
-        screen.getByRole("button", { name: "Add another line" })
+        screen.getByRole("button", { name: "Add another line" }),
       ).toBeInTheDocument();
     });
 
@@ -37,7 +38,7 @@ describe("NewsletterSignupForm", () => {
     it("renders the submit button", () => {
       setup();
       expect(
-        screen.getByRole("button", { name: "Submit" })
+        screen.getByRole("button", { name: "Submit" }),
       ).toBeInTheDocument();
     });
   });
@@ -48,7 +49,7 @@ describe("NewsletterSignupForm", () => {
       await user.click(screen.getByRole("button", { name: "Submit" }));
 
       expect(
-        await screen.findByText("E-mail is required.")
+        await screen.findByText("E-mail is required."),
       ).toBeInTheDocument();
     });
 
@@ -58,7 +59,7 @@ describe("NewsletterSignupForm", () => {
       await user.click(screen.getByRole("button", { name: "Submit" }));
 
       expect(
-        await screen.findByText("Please enter a valid e-mail address.")
+        await screen.findByText("Please enter a valid e-mail address."),
       ).toBeInTheDocument();
     });
 
@@ -68,7 +69,7 @@ describe("NewsletterSignupForm", () => {
       await user.click(screen.getByRole("button", { name: "Submit" }));
 
       expect(
-        await screen.findByText("You must accept the terms and conditions.")
+        await screen.findByText("You must accept the terms and conditions."),
       ).toBeInTheDocument();
     });
 
@@ -80,13 +81,13 @@ describe("NewsletterSignupForm", () => {
 
       await waitFor(() => {
         expect(
-          screen.queryByText("E-mail is required.")
+          screen.queryByText("E-mail is required."),
         ).not.toBeInTheDocument();
         expect(
-          screen.queryByText("Please enter a valid e-mail address.")
+          screen.queryByText("Please enter a valid e-mail address."),
         ).not.toBeInTheDocument();
         expect(
-          screen.queryByText("You must accept the terms and conditions.")
+          screen.queryByText("You must accept the terms and conditions."),
         ).not.toBeInTheDocument();
       });
     });
@@ -95,17 +96,14 @@ describe("NewsletterSignupForm", () => {
   describe("form submission", () => {
     it("calls onSubmit with trimmed email when the form is valid", async () => {
       const { user, onSubmit } = setup();
-      await user.type(
-        screen.getByLabelText("E-mail*"),
-        "  user@example.com  "
-      );
+      await user.type(screen.getByLabelText("E-mail*"), "  user@example.com  ");
       await user.click(screen.getByRole("checkbox"));
       await user.click(screen.getByRole("button", { name: "Submit" }));
 
       await waitFor(() => {
         expect(onSubmit).toHaveBeenCalledTimes(1);
         expect(onSubmit).toHaveBeenCalledWith(
-          expect.objectContaining({ email: "user@example.com" })
+          expect.objectContaining({ email: "user@example.com" }),
         );
       });
     });
@@ -118,7 +116,7 @@ describe("NewsletterSignupForm", () => {
 
       await waitFor(() => {
         expect(onSubmit).toHaveBeenCalledWith(
-          expect.objectContaining({ acceptedTerms: true })
+          expect.objectContaining({ acceptedTerms: true }),
         );
       });
     });
@@ -128,14 +126,14 @@ describe("NewsletterSignupForm", () => {
       await user.type(screen.getByLabelText("E-mail*"), "user@example.com");
       await user.type(
         screen.getByLabelText("Clinic - Address line 1"),
-        "  My Clinic  "
+        "  My Clinic  ",
       );
       await user.click(screen.getByRole("checkbox"));
       await user.click(screen.getByRole("button", { name: "Submit" }));
 
       await waitFor(() => {
         expect(onSubmit).toHaveBeenCalledWith(
-          expect.objectContaining({ clinic: ["My Clinic"] })
+          expect.objectContaining({ clinic: ["My Clinic"] }),
         );
       });
     });
@@ -153,7 +151,7 @@ describe("NewsletterSignupForm", () => {
     it("adds a second address line when 'Add another line' is clicked", async () => {
       const { user } = setup();
       await user.click(
-        screen.getByRole("button", { name: "Add another line" })
+        screen.getByRole("button", { name: "Add another line" }),
       );
 
       expect(screen.getByLabelText("Address line 2")).toBeInTheDocument();
@@ -162,23 +160,23 @@ describe("NewsletterSignupForm", () => {
     it("removes an address line when its remove button is clicked", async () => {
       const { user } = setup();
       await user.click(
-        screen.getByRole("button", { name: "Add another line" })
+        screen.getByRole("button", { name: "Add another line" }),
       );
 
       expect(screen.getByLabelText("Address line 2")).toBeInTheDocument();
 
       await user.click(
-        screen.getByRole("button", { name: "Remove address line 2" })
+        screen.getByRole("button", { name: "Remove address line 2" }),
       );
 
-      expect(
-        screen.queryByLabelText("Address line 2")
-      ).not.toBeInTheDocument();
+      expect(screen.queryByLabelText("Address line 2")).not.toBeInTheDocument();
     });
 
     it("allows adding up to three address lines", async () => {
       const { user } = setup();
-      const addButton = screen.getByRole("button", { name: "Add another line" });
+      const addButton = screen.getByRole("button", {
+        name: "Add another line",
+      });
 
       await user.click(addButton);
       await user.click(addButton);
@@ -189,7 +187,9 @@ describe("NewsletterSignupForm", () => {
 
     it("disables 'Add another line' when the maximum of 3 lines is reached", async () => {
       const { user } = setup();
-      const addButton = screen.getByRole("button", { name: "Add another line" });
+      const addButton = screen.getByRole("button", {
+        name: "Add another line",
+      });
 
       await user.click(addButton);
       await user.click(addButton);
@@ -200,12 +200,14 @@ describe("NewsletterSignupForm", () => {
     it("includes all clinic line values in the submission payload", async () => {
       const { user, onSubmit } = setup();
 
-      const addButton = screen.getByRole("button", { name: "Add another line" });
+      const addButton = screen.getByRole("button", {
+        name: "Add another line",
+      });
       await user.click(addButton);
 
       await user.type(
         screen.getByLabelText("Clinic - Address line 1"),
-        "Clinic A"
+        "Clinic A",
       );
       await user.type(screen.getByLabelText("Address line 2"), "Clinic B");
       await user.type(screen.getByLabelText("E-mail*"), "user@example.com");
@@ -214,7 +216,7 @@ describe("NewsletterSignupForm", () => {
 
       await waitFor(() => {
         expect(onSubmit).toHaveBeenCalledWith(
-          expect.objectContaining({ clinic: ["Clinic A", "Clinic B"] })
+          expect.objectContaining({ clinic: ["Clinic A", "Clinic B"] }),
         );
       });
     });

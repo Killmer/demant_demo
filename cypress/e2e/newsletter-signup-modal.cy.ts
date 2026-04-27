@@ -12,6 +12,33 @@ const removeLineButton = (line: number) =>
   cy.get(`button[aria-label="Remove address line ${line}"]`);
 
 // ---------------------------------------------------------------------------
+describe("NewsletterSignupModal — open via query param", () => {
+  it("opens the modal automatically when visiting /?modal=newsletter", () => {
+    cy.openNewsletterModalViaQueryParam();
+    cy.contains("Want to see the unseen?").should("be.visible");
+  });
+
+  it("removes the ?modal param from the URL after opening", () => {
+    cy.openNewsletterModalViaQueryParam();
+    cy.url().should("not.include", "modal=newsletter");
+  });
+
+  it("modal is fully functional after opening via query param — can be closed", () => {
+    cy.openNewsletterModalViaQueryParam();
+    cy.get('button[aria-label="Close"]').click();
+    cy.contains("Want to see the unseen?").should("not.exist");
+  });
+
+  it("modal is fully functional after opening via query param — can submit", () => {
+    cy.openNewsletterModalViaQueryParam();
+    cy.get('input[type="email"]').type("redirect@example.com");
+    cy.get('[name="acceptedTerms"]').check({ force: true });
+    cy.get('button[aria-label="Submit"]').click();
+    cy.contains("Want to see the unseen?").should("not.exist");
+  });
+});
+
+// ---------------------------------------------------------------------------
 describe("NewsletterSignupModal", () => {
   // -------------------------------------------------------------------------
   describe("visibility", () => {

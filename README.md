@@ -10,4 +10,4 @@ To install dependencies run `npm install`
 ## Test
 
 To run unit tests run `npm run test`
-To run E2E tests run `npm run cypress:run
+To run E2E tests run `npm run cypress:run`

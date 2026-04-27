@@ -22,3 +22,15 @@ Cypress.Commands.add("openNewsletterModal", () => {
   cy.contains("Want to see the unseen?").should("be.visible");
 });
 
+/**
+ * Opens the newsletter-signup modal by navigating directly to
+ * /?modal=newsletter, simulating an open-after-redirect flow.
+ *
+ * Usage: cy.openNewsletterModalViaQueryParam()
+ */
+Cypress.Commands.add("openNewsletterModalViaQueryParam", () => {
+  cy.visit("/?modal=newsletter");
+  // Wait for the modal heading to be visible before proceeding
+  cy.contains("Want to see the unseen?").should("be.visible");
+});
+
