@@ -13,7 +13,7 @@ const DataPreview: FC<Props> = ({ data }) => {
       id="form-data-preview"
       className={"bg-white rounded-6 p-12 w-[80vw] md:w-[600px]"}
     >
-      <div className="text-head-3 font-medium mb-8">Form data preview</div>
+      <h3 className="text-head-3 font-medium mb-8">Form data preview</h3>
       <div className={"grid grid-cols-2 gap-6 w-full"}>
         <span className={"font-medium"}>Email:</span>
         <span>{data.email}</span>

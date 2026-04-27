@@ -1,19 +1,21 @@
 import Button from "components/Button";
 import DataPreview from "containers/DataPreview/DataPreview";
-import NewsletterSignupModal from "containers/NewsletterSignupModal/NewsletterSignupModal";
-
-import { FormDataDTO } from "models/FormDataDTO";
 import { NextPage } from "next";
-import { useState } from "react";
 import OShape from "images/o_shape.svg";
+import { useModal } from "context/ModalContext";
+import { FormDataDTO } from "models/FormDataDTO";
+
+const DEFAULT_FORM_DATA: Partial<FormDataDTO> = {
+  email: "",
+  clinic: [""],
+  acceptedTerms: false,
+};
 
 const HomePage: NextPage = () => {
-  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const [submittedData, setSubmittedData] = useState<Partial<FormDataDTO>>({
-    email: "",
-    clinic: [""],
-    acceptedTerms: false,
-  });
+  const { open, submittedData } = useModal<Partial<FormDataDTO>>(
+    "newsletter",
+    DEFAULT_FORM_DATA,
+  );
 
   return (
     <div className="min-h-[100vh]">
@@ -27,23 +29,11 @@ const HomePage: NextPage = () => {
           />
         </div>
 
-        <DataPreview data={submittedData} />
+        <DataPreview data={submittedData ?? DEFAULT_FORM_DATA} />
 
         <div className={"w-[80vw] md:w-[600px]"}>
-          <Button
-            className={"w-full"}
-            onClick={() => setIsModalVisible(true)}
-            label={"Show modal"}
-          />
+          <Button className={"w-full"} onClick={open} label={"Show modal"} />
         </div>
-        <NewsletterSignupModal
-          isOpen={isModalVisible}
-          onClose={() => setIsModalVisible(false)}
-          onSubmit={(data) => {
-            setSubmittedData(data);
-            setIsModalVisible(false);
-          }}
-        />
       </div>
     </div>
   );

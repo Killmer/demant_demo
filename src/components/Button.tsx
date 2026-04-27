@@ -2,8 +2,8 @@ import { FC, ReactNode } from "react";
 import { cn } from "src/lib/cn";
 
 export enum ButtonType {
-  Button = "Button",
-  Submit = "Submit",
+  Button = "button",
+  Submit = "submit",
 }
 
 export enum ButtonVariant {
